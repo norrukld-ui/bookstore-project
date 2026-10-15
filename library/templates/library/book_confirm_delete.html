@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Кітапты өшіру</title>
+</head>
+<body>
+    <h1>Шынымен өшіргіңіз келе ме?</h1>
+    <p>"{{ book.title }}" кітабын жою.</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Иә, өшіру</button>
+    </form>
+    <br>
+    <a href="{% url 'book-list' %}">Жоқ, бас тарту</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Кітапты қосу / өңдеу</title>
+</head>
+<body>
+    <h1>Кітап мәліметтері</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сақтау</button>
+    </form>
+    <br>
+    <a href="{% url 'book-list' %}">Артқа</a>
+</body>
+</html>

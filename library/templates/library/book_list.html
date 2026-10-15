@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Кітаптар тізімі</title>
+</head>
+<body>
+    <h1>Кітапхана</h1>
+    <a href="{% url 'book-add' %}">+ Жаңа кітап қосу</a>
+    <hr>
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{% url 'book-detail' book.pk %}"><b>{{ book.title }}</b></a> 
+                — Авторы: {{ book.author.name }} (Бағасы: {{ book.price }} тг)
+                | <a href="{% url 'book-edit' book.pk %}">Өңдеу</a>
+                | <a href="{% url 'book-delete' book.pk %}">Өшіру</a>
+            </li>
+        {% empty %}
+            <p>Кітаптар жоқ.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

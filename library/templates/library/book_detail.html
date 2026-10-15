@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p><b>Авторы:</b> {{ book.author.name }} ({{ book.author.country }})</p>
+    <p><b>Бағасы:</b> {{ book.price }} тг</p>
+    <p><b>Бет саны:</b> {{ book.pages }}</p>
+    <p><b>Шыққан күні:</b> {{ book.published }}</p>
+    <p><b>Тегтер:</b> 
+        {% for tag in book.tags.all %}
+            [{{ tag.name }}]
+        {% endfor %}
+    </p>
+    <br>
+    <a href="{% url 'book-list' %}">← Тізімге қайту</a>
+</body>
+</html>
